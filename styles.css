@@ -1,0 +1,148 @@
+@import url(reset.css);
+.roboto-mono-regular {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  font-family: "Roboto Mono", monospace;
+}
+body {
+  align-items: center;
+  background: #fff;
+  color: #111;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 20px;
+}
+
+h1 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 24px;
+}
+h2 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* ----------------------------------------------------------------------
+   "for whom?" manifesto — mixed-typeface composition.
+   Each <span> class below maps to one treatment from the InDesign comp.
+   Fonts are the closest free Google Fonts equivalents; swap the
+   font-family values if you want to match the originals exactly.
+---------------------------------------------------------------------- */
+.manifesto {
+  max-width: 600px;
+  margin: 24px auto 0;
+  text-align: justify;
+  text-align-last: center;
+  text-justify: inter-word;
+  font-family: "Roboto Mono", monospace;
+  font-size: 17px;
+  line-height: 2.1;
+  color: #111;
+}
+
+/* "i want", "open" — bold italic slab */
+.manifesto .slab-bi {
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* "home" — bold rounded display */
+.manifesto .rounded {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: 1.15em;
+}
+
+/* "actual" — oversized bold rounded italic */
+.manifesto .rounded-lg {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.9em;
+}
+
+/* "know-it-alls," — shrunk mono */
+.manifesto .small {
+  font-size: 0.72em;
+}
+
+/* "spam" — tiny mono */
+.manifesto .tiny {
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+
+/* "not" — bold pixel */
+.manifesto .pixel {
+  font-family: "Pixelify Sans", monospace;
+  font-weight: 700;
+}
+
+/* "dirty-dishes" — struck-through pixel */
+.manifesto .pixel-strike {
+  font-family: "Silkscreen", monospace;
+  font-weight: 400;
+  font-size: 0.85em;
+  text-decoration: line-through;
+}
+
+/* "scattered around" — pixel blackletter */
+.manifesto .blackletter {
+  font-family: "Jacquard 24", system-ui;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+/* "whimsical gals," — flourished script */
+.manifesto .script {
+  font-family: "Pinyon Script", cursive;
+  font-size: 1.7em;
+}
+
+/* "singular" — muted italic */
+.manifesto .ital-gray {
+  font-style: italic;
+  color: #9a9a9a;
+}
+
+/* "something in-betweeners" — plain italic */
+.manifesto .ital {
+  font-style: italic;
+}
+
+/* "screenshot_#13938273" — bold mono */
+.manifesto .mono-bold {
+  font-weight: 700;
+}
+
+/* "narnia," — small-caps serif */
+.manifesto .serif-sc {
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.05em;
+}
+
+/* "unopened" — heavy sans */
+.manifesto .heavy {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+}
+
+/* "the 3rd space for the secret third thing" — bottom-right tagline */
+.manifesto .tagline {
+  display: block;
+  margin-top: 48px;
+  text-align: right;
+  text-align-last: right;
+  font-style: italic;
+  font-size: 0.85em;
+}
