@@ -37,6 +37,13 @@ h2 {
    Fonts are the closest free Google Fonts equivalents; swap the
    font-family values if you want to match the originals exactly.
 ---------------------------------------------------------------------- */
+.manifesto-title {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: underline;
+}
 .manifesto {
   max-width: 600px;
   margin: 24px auto 0;
@@ -145,4 +152,96 @@ h2 {
   text-align-last: right;
   font-style: italic;
   font-size: 0.85em;
+}
+
+/* ----------------------------------------------------------------------
+   "you are not a ____" rules list — second mixed-typeface composition.
+   Heading + a bulleted list where every role gets its own typeface.
+   Fonts are the closest free Google Fonts equivalents; swap as needed.
+---------------------------------------------------------------------- */
+.rules {
+  max-width: 640px;
+  margin: 80px auto 0;
+  color: #111;
+}
+h3 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* heading — clean sans; overrides the generic centered h2 */
+.rules-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 1.1;
+  text-align: left;
+}
+.rules-title .r-ital {
+  font-style: italic;
+}
+.rules-title .r-bold {
+  font-weight: 700;
+}
+.rules-title .r-blank {
+  font-style: normal;
+  letter-spacing: -0.05em;
+}
+
+/* indented list with small square bullets */
+.rules-list {
+  list-style: none;
+  margin: 28px 0 0;
+  padding-left: 33%;
+}
+.rules-list li {
+  position: relative;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+.rules-list li::before {
+  content: "\25AA"; /* ▪ small black square */
+  position: absolute;
+  left: -22px;
+  top: 0.2em;
+  font-size: 13px;
+}
+
+/* Designer — ornate pixel script */
+.r-designer {
+  font-family: "Jacquarda Bastarda 9", system-ui;
+  font-size: 30px;
+}
+/* Computer scientist — monospace italic */
+.r-cs {
+  font-family: "Roboto Mono", monospace;
+  font-style: italic;
+  font-size: 28px;
+}
+/* poet — plain italic */
+.r-poet {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-size: 22px;
+}
+/* YC founder at a b2b SaaS — bold italic sans */
+.r-yc {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 36px;
+}
+/* engineer — roman serif */
+.r-engineer {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+}
+/* painter — heavy sans */
+.r-painter {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
 }
