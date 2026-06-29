@@ -31,12 +31,7 @@ h2 {
   text-align: center;
 }
 
-/* ----------------------------------------------------------------------
-   "for whom?" manifesto — mixed-typeface composition.
-   Each <span> class below maps to one treatment from the InDesign comp.
-   Fonts are the closest free Google Fonts equivalents; swap the
-   font-family values if you want to match the originals exactly.
----------------------------------------------------------------------- */
+
 .manifesto-title {
   font-family: "Roboto Mono", monospace;
   font-weight: bold;
@@ -244,4 +239,80 @@ h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 30px;
+}
+
+/* ----------------------------------------------------------------------
+   "one * only rule" — play / fail composition (rules.html).
+   Italic monospace connective text threaded with display typefaces:
+   play (pixel) · third (slab) · infinite (dotted pixel) · ! (slab italic).
+---------------------------------------------------------------------- */
+.onlyrule {
+  max-width: 760px;
+  margin: 60px auto 0;
+  color: #111;
+}
+
+/* heading — top-right italic mono; overrides the centered/underlined h3 */
+.onlyrule-head {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 30px;
+  text-align: right;
+  text-decoration: none;
+  margin-bottom: 56px;
+}
+
+.onlyrule-body {
+  text-align: left;
+  font-size: 46px;
+  line-height: 1.4;
+}
+
+/* connective text — "try, fail, again, a, time, times, again" */
+.onlyrule-body .it {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* "play" — chunky pixel */
+.onlyrule-body .pl {
+  font-family: "Pixelify Sans", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* "third" — bold upright slab */
+.onlyrule-body .third {
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* "infinite" — dotted / small pixel */
+.onlyrule-body .inf {
+  font-family: "Silkscreen", monospace;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.66em;
+  letter-spacing: -0.02em;
+}
+
+/* "!" — bold slab italic */
+.onlyrule-body .bang {
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* bottom-right tagline — muted italic mono */
+.onlyrule-tag {
+  margin-top: 72px;
+  text-align: right;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  color: #888;
 }
