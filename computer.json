@@ -1,0 +1,36 @@
+{
+  "high_fidelity_computer": [
+    {
+      "id": "1",
+      "name": "Merlin 1.0",
+      "model": "/models/merlin/high.glb"
+    },
+    {
+      "id": "2",
+      "name": "Anna",
+      "model": "/models/anna/high.glb"
+    },
+    {
+      "id": "3",
+      "name": "Violet",
+      "model": "/models/violet/high.glb"
+    }
+  ],
+  "low_fidelity_computer": [
+    {
+      "id": "1",
+      "name": "Merlin 1.0",
+      "model": "/models/merlin/low.glb"
+    },
+    {
+      "id": "2",
+      "name": "Anna",
+      "model": "/models/anna/low.glb"
+    },
+    {
+      "id": "3",
+      "name": "Violet",
+      "model": "/models/violet/low.glb"
+    }
+  ]
+}
