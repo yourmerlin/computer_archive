@@ -1,0 +1,10 @@
+# tells netlify how to build the react site
+[build]
+  # turn the react code into plain html/css/js
+  command = "npm run build"
+  # the folder vite puts that output in. this is what goes online.
+  publish = "dist"
+
+[build.environment]
+  # use a recent node version (vite needs node 18+)
+  NODE_VERSION = "22"
