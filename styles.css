@@ -75,3 +75,21 @@ body {
   font-size: 12px;
   padding: 20px;
 }
+
+/* computer grid (react version) */
+.computer-grids {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 80%;
+  margin: 2rem auto;
+}
+.computer-card {
+  position: relative;
+  border: 1px solid #111;
+  padding: 10px;
+  text-align: center;
+}
+.computer-card-model {
+  height: 250px;
+}
