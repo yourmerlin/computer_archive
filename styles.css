@@ -153,4 +153,40 @@ button:hover {
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 1; /* sit above the 3D model's canvas */
+}
+
+/* ---------- phones (screens 600px wide or less) ----------
+   everything in here only applies on small screens,
+   and overrides the matching rules above. */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  nav {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 22px;
+  }
+  /* the ascii art is ~62 characters wide, so shrink the text
+     with the screen width (vw = 1% of the screen) so it always fits */
+  nav pre {
+    font-size: 2.2vw;
+  }
+
+  /* one card per row, straight down */
+  .computer-grids {
+    grid-template-columns: 1fr;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  /* lightbox fills almost the whole phone screen.
+     dvh = screen height, minus the phone's address bar */
+  .lightbox-content {
+    width: 95vw;
+    height: 85dvh;
+    padding: 10px;
+  }
 }

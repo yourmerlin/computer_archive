@@ -8,8 +8,10 @@ function Model({ url }) {
   return <primitive object={scene} />;
 }
 
-// a small 3D scene: drag to rotate, scroll to zoom.
-export default function ModelViewer({ url }) {
+// a small 3D scene.
+// interactive = true  -> drag to rotate, scroll/pinch to zoom (used in the lightbox)
+// interactive = false -> still preview (used in the grid, so phones can scroll past it)
+export default function ModelViewer({ url, interactive = false }) {
   return (
     <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
       {/* Suspense shows nothing until the model finishes downloading */}
@@ -19,7 +21,7 @@ export default function ModelViewer({ url }) {
           <Model url={url} />
         </Stage>
       </Suspense>
-      <OrbitControls />
+      {interactive && <OrbitControls />}
     </Canvas>
   );
 }

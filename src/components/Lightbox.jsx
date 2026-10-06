@@ -17,7 +17,7 @@ export default function Lightbox({ computer, onClose }) {
           close
         </button>
         <h2>{computer.name}</h2>
-        <ModelViewer url={computer.highModel} />
+        <ModelViewer url={computer.highModel} interactive />
       </div>
     </div>
   );
