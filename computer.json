@@ -2,7 +2,7 @@
   "high_fidelity_computer": [
     {
       "id": "1",
-      "name": "Merlin 1.0",
+      "name": "Merlin",
       "model": "/models/merlin/high.glb"
     },
     {
@@ -14,12 +14,22 @@
       "id": "3",
       "name": "Violet",
       "model": "/models/violet/high.glb"
+    },
+    {
+      "id": "4",
+      "name": "Lucy",
+      "model": "/models/lucy/high.glb"
+    },
+    {
+      "id": "5",
+      "name": "AC",
+      "model": "/models/ac/high.glb"
     }
   ],
   "low_fidelity_computer": [
     {
       "id": "1",
-      "name": "Merlin 1.0",
+      "name": "Merlin",
       "model": "/models/merlin/low.glb"
     },
     {
@@ -31,6 +41,16 @@
       "id": "3",
       "name": "Violet",
       "model": "/models/violet/low.glb"
+    },
+    {
+      "id": "4",
+      "name": "Lucy",
+      "model": "/models/lucy/low.glb"
+    },
+    {
+      "id": "5",
+      "name": "AC",
+      "model": "/models/ac/low.glb"
     }
   ]
 }

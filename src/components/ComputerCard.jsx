@@ -12,9 +12,11 @@ export default function ComputerCard({ name, lowModel, highModel, onOpen }) {
       <div className="computer-card-model">
         <ModelViewer url={showHigh ? highModel : lowModel} />
       </div>
-      <h2>{name}</h2>
+      <h2>
+        <pre>("{name}") </pre>
+      </h2>
       <button onClick={() => setShowHigh(!showHigh)}>
-        {showHigh ? "show low quality" : "show high quality"}
+        {showHigh ? "click 4 lo-fi" : "click 4 hi-fi"}
       </button>
     </article>
   );
