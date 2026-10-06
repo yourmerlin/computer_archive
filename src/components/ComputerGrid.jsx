@@ -31,6 +31,7 @@ export default function ComputerGrid() {
           onOpen={() => setSelectedComputer(computer)}
         />
       ))}
+
       {selectedComputer && (
         <Lightbox
           computer={selectedComputer}

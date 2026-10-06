@@ -14,6 +14,14 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.h61c-t {
+  fill: currentColor;
+  d: path(
+    "M9 1v2H3v6H1V2h1V1zm0 20v2H2v-1H1v-7h2v6zm14-6v7h-1v1h-7v-2h6v-6zm0-13v7h-2V3h-6V1h7v1z"
+  );
+}
+
 #ditherCanvas {
   position: fixed;
   top: 0;
@@ -90,23 +98,29 @@ body {
 }
 .computer-card {
   position: relative;
-  border: 1px solid #111;
   padding: 10px;
   text-align: center;
+}
+.computer-card:hover {
+  backdrop-filter: blur(10px);
+  border: 1px solid #111;
 }
 .computer-card-model {
   height: 250px;
 }
 button {
-  background-color: #fff;
-  border: 1px dot #111;
+  color: black;
+  background-color: transparent;
+  border: 0px;
   padding: 10px 10px;
-  cursor: pointer;
-  transition: all 0.2s;
+  font-family: "bitcount-grid-single-circle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
 }
 button:hover {
-  background-color: #111;
-  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: black;
 }
 .lightbox {
   position: fixed; /* stays put even if the page scrolls */
@@ -116,6 +130,17 @@ button:hover {
   align-items: center;
   justify-content: center;
   z-index: 10; /* sits on top of the grid */
+}
+.lightboxButton {
+  color: black;
+  background-color: transparent;
+  border: 0px;
+  /* pin to the top-right corner of the card.
+     works because .computer-card has position: relative */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1; /* sit above the 3D model's canvas */
 }
 .lightbox-content {
   background: #fff;

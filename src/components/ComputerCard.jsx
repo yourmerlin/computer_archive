@@ -8,15 +8,29 @@ export default function ComputerCard({ name, lowModel, highModel, onOpen }) {
   const [showHigh, setShowHigh] = useState(false);
 
   return (
-    <article className="computer-card" onClick={onOpen}>
+    <article className="computer-card">
       <div className="computer-card-model">
         <ModelViewer url={showHigh ? highModel : lowModel} />
       </div>
       <h2>
-        <pre>("{name}") </pre>
+        <pre>
+          ("{name}") {"{"}
+        </pre>
       </h2>
       <button onClick={() => setShowHigh(!showHigh)}>
-        {showHigh ? "click 4 lo-fi" : "click 4 hi-fi"}
+        mouseClicked{showHigh ? "(lo-fi)" : "(hi-fi)"}
+        {"}"}
+      </button>
+      {/* opens the lightbox: onOpen comes from ComputerGrid */}
+      <button className="lightboxButton" onClick={onOpen}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path className="h61c-t" />
+        </svg>
       </button>
     </article>
   );
