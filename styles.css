@@ -93,3 +93,24 @@ body {
 .computer-card-model {
   height: 250px;
 }
+.lightbox {
+  position: fixed; /* stays put even if the page scrolls */
+  inset: 0; /* stretch to all 4 edges of the screen */
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* sits on top of the grid */
+}
+.lightbox-content {
+  background: #fff;
+  width: 90vw;
+  height: 90vh;
+  padding: 20px;
+  position: relative;
+}
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
