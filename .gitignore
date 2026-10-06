@@ -1,0 +1,6 @@
+# original full-size models (too big for git)
+computer_models/
+
+# vite / npm
+node_modules/
+dist/
