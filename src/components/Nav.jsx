@@ -19,7 +19,7 @@ export default function Nav() {
   return (
     <nav>
       <pre>{asciiArt}</pre>
-      <h1>// home for computers</h1>
+      <h1>Computer_Archive</h1>
     </nav>
   );
 }
