@@ -8,18 +8,14 @@ function Model({ url }) {
   return <primitive object={scene} />;
 }
 
-// a small 3D scene.
-// interactive = true  -> drag to rotate, scroll/pinch to zoom (used in the lightbox)
-// interactive = false -> still preview (used in the grid, so phones can scroll past it)
-export default function ModelViewer({ url, interactive = false }) {
+// a small 3D scene. drag to rotate everywhere.
+// zoom = true  -> scroll/pinch also zooms (used in the lightbox)
+// zoom = false -> no zoom, so scrolling over a card still scrolls the page (grid)
+export default function ModelViewer({ url, zoom = false }) {
   return (
-    // frameloop="demand": only redraw when something changes, instead of
-    // 60 times a second. grid previews don't move, so they draw once and stop.
-    // the lightbox keeps "always" so dragging the model stays smooth.
-    <Canvas
-      camera={{ position: [0, 0, 5], fov: 40 }}
-      frameloop={interactive ? "always" : "demand"}
-    >
+    // frameloop="demand": only redraw when something changes (like a drag),
+    // instead of 60 times a second. OrbitControls tells it when to redraw.
+    <Canvas camera={{ position: [0, 0, 5], fov: 40 }} frameloop="demand">
       {/* Suspense shows nothing until the model finishes downloading */}
       <Suspense fallback={null}>
         {/* Stage adds lights and centers + scales the model to fit */}
@@ -27,7 +23,7 @@ export default function ModelViewer({ url, interactive = false }) {
           <Model url={url} />
         </Stage>
       </Suspense>
-      {interactive && <OrbitControls />}
+      <OrbitControls enableZoom={zoom} enablePan={zoom} />
     </Canvas>
   );
 }

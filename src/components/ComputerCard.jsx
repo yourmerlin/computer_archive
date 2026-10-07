@@ -1,26 +1,17 @@
-import { useState } from "react";
 import ModelViewer from "./ModelViewer.jsx";
 
-// one card in the grid. name, lowModel and highModel are "props":
+// one card in the grid. name, lowModel and onOpen are "props":
 // values passed in from ComputerGrid, like attributes on an HTML tag.
-export default function ComputerCard({ name, lowModel, highModel, onOpen }) {
-  // state: something the card remembers. starts as false (show low model).
-  const [showHigh, setShowHigh] = useState(false);
-
+// the card always shows lo-fi. hi-fi is only in the lightbox.
+export default function ComputerCard({ name, lowModel, onOpen }) {
   return (
     <article className="computer-card">
       <div className="computer-card-model">
-        <ModelViewer url={showHigh ? highModel : lowModel} />
+        <ModelViewer url={lowModel} />
       </div>
       <h2>
-        <pre>
-          ("{name}") {"{"}
-        </pre>
+        <pre>("{name}")</pre>
       </h2>
-      <button onClick={() => setShowHigh(!showHigh)}>
-        mouseClicked{showHigh ? "(lo-fi)" : "(hi-fi)"}
-        {"}"}
-      </button>
       {/* opens the lightbox: onOpen comes from ComputerGrid */}
       <button className="lightboxButton" onClick={onOpen}>
         <svg

@@ -1,7 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ModelViewer from "./ModelViewer";
 
 export default function Lightbox({ computer, onClose }) {
+  // starts on lo-fi every time the lightbox opens
+  const [showHigh, setShowHigh] = useState(false);
+
   useEffect(() => {
     function handleKey(e) {
       if (e.key === "Escape") onClose();
@@ -17,7 +20,13 @@ export default function Lightbox({ computer, onClose }) {
           close
         </button>
         <h2>{computer.name}</h2>
-        <ModelViewer url={computer.highModel} interactive />
+        <button onClick={() => setShowHigh(!showHigh)}>
+          mouseClicked{showHigh ? "(lo-fi)" : "(hi-fi)"}
+        </button>
+        <ModelViewer
+          url={showHigh ? computer.highModel : computer.lowModel}
+          zoom
+        />
       </div>
     </div>
   );

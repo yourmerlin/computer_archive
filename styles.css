@@ -22,16 +22,6 @@
   );
 }
 
-#ditherCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  image-rendering: pixelated;
-}
 html {
   background-color: #fff;
 }
@@ -101,9 +91,11 @@ body {
   position: relative;
   padding: 10px;
   text-align: center;
+  backdrop-filter: blur(10px);
+
+  background-color: transparent;
 }
 .computer-card:hover {
-  backdrop-filter: blur(10px);
   border: 1px solid #111;
 }
 .computer-card-model {
