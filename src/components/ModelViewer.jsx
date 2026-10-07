@@ -13,7 +13,13 @@ function Model({ url }) {
 // interactive = false -> still preview (used in the grid, so phones can scroll past it)
 export default function ModelViewer({ url, interactive = false }) {
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
+    // frameloop="demand": only redraw when something changes, instead of
+    // 60 times a second. grid previews don't move, so they draw once and stop.
+    // the lightbox keeps "always" so dragging the model stays smooth.
+    <Canvas
+      camera={{ position: [0, 0, 5], fov: 40 }}
+      frameloop={interactive ? "always" : "demand"}
+    >
       {/* Suspense shows nothing until the model finishes downloading */}
       <Suspense fallback={null}>
         {/* Stage adds lights and centers + scales the model to fit */}

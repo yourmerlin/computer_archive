@@ -11,7 +11,7 @@ export function startDither(canvas) {
     return () => {};
   }
 
-  const PIXEL_SIZE = 10.0;
+  const PIXEL_SIZE = 15.0;
 
   const vsSource = `#version 300 es
       in vec2 a_position;
@@ -59,7 +59,9 @@ export function startDither(canvas) {
       }
 
       void main() {
-        float ps = ${PIXEL_SIZE.toFixed(1)};
+        // the canvas is drawn at low resolution: 1 canvas pixel = 1 square
+        // (see resize() below), so the square size here is 1.
+        float ps = 1.0;
         vec2 fc = gl_FragCoord.xy - uResolution*0.5;
         float ar = uResolution.x/uResolution.y;
         vec2 cellCoord = floor(fc/(8.0*ps))*(8.0*ps);
@@ -130,9 +132,13 @@ export function startDither(canvas) {
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
+  // speed trick: instead of running the shader for every screen pixel,
+  // make the canvas tiny (one pixel per dither square) and let CSS stretch it
+  // to full screen. image-rendering: pixelated keeps each pixel a sharp square.
+  // with PIXEL_SIZE = 15 that's 225x less work for the graphics card.
   function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = Math.ceil(window.innerWidth / PIXEL_SIZE);
+    canvas.height = Math.ceil(window.innerHeight / PIXEL_SIZE);
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.uniform2f(uRes, canvas.width, canvas.height);
   }
