@@ -12,11 +12,16 @@ export default function ComputerCard({ name, year, link, lowModel, onOpen }) {
       <h2>
         {/* the link sits inside <pre> (inline inside a block) so the hover
             underline works. target="_blank" opens it in a new tab;
-            rel="noopener noreferrer" stops that tab from controlling this one */}
+            rel="noopener noreferrer" stops that tab from controlling this one.
+            no link yet ("" in the json)? then it's just plain text */}
         <pre>
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            ("{name}")
-          </a>
+          {link ? (
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              ("{name}")
+            </a>
+          ) : (
+            <>("{name}")</>
+          )}
         </pre>
       </h2>
       <p>

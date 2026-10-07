@@ -39,6 +39,22 @@
       "year": "2026",
       "lowModel": "/models/ac/low.glb",
       "highModel": "/models/ac/high.glb"
+    },
+    {
+      "id": "6",
+      "name": "Miranda",
+      "link": "",
+      "year": "2026",
+      "lowModel": "/models/miranda/low.glb",
+      "highModel": "/models/miranda/high.glb"
+    },
+    {
+      "id": "7",
+      "name": "Merlin 2.0",
+      "link": "",
+      "year": "2026",
+      "lowModel": "/models/merlin-mac/low.glb",
+      "highModel": "/models/merlin-mac/high.glb"
     }
   ]
 }
