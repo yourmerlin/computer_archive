@@ -2,6 +2,8 @@
 
 @import url("https://use.typekit.net/rjj0vph.css");
 
+/* fonts or emojis: START  */
+
 .bitcount-grid-single-circle-regular {
   font-family: "bitcount-grid-single-circle", sans-serif;
   font-weight: 400;
@@ -21,15 +23,21 @@
     "M9 1v2H3v6H1V2h1V1zm0 20v2H2v-1H1v-7h2v6zm14-6v7h-1v1h-7v-2h6v-6zm0-13v7h-2V3h-6V1h7v1z"
   );
 }
-/* i like this color
 
-0005d0 */
+/* fonts or emojis: END  */
+
+/* color: START */
 
 :root {
   --background-color: #0005d0;
   --text-color: white;
   --accent-color: white;
 }
+
+/* color: END */
+
+/* nav + footer: START */
+
 html {
   /* background-color: #fff; */
   background-color: var(--background-color);
@@ -74,6 +82,8 @@ footer p {
   align-items: left;
   font-size: 16px;
 }
+
+/* nav + footer: END */
 
 /* computer grid (react version) */
 .computer-grids {
