@@ -21,17 +21,27 @@
     "M9 1v2H3v6H1V2h1V1zm0 20v2H2v-1H1v-7h2v6zm14-6v7h-1v1h-7v-2h6v-6zm0-13v7h-2V3h-6V1h7v1z"
   );
 }
+/* i like this color
 
+0005d0 */
+
+:root {
+  --background-color: #0005d0;
+  --text-color: white;
+  --accent-color: white;
+}
 html {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: var(--background-color);
 }
 
 nav {
+  color: var(--text-color);
   font-family: "bitcount-grid-single-square", sans-serif;
   width: 60%;
   margin: 0 auto;
   backdrop-filter: blur(10px);
-  background-color: white;
+  background-color: var(--background-color);
   display: block;
   text-align: center;
   align-items: center;
@@ -43,36 +53,16 @@ nav {
 nav pre {
   font-size: 12px;
 }
-nav ul {
-  color: black;
-  display: flex;
-  gap: 30px;
 
-  list-style: none;
-}
-nav ul li {
-  text-align: center;
-}
-
-nav ul li a {
-  padding: 14px 28px;
-  color: black;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: all 0.2s;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-  text-decoration-color: black;
-}
-body {
-  align-items: center;
-  background: #fff;
-  color: #111;
+footer {
+  font-family: "bitcount-grid-single-square", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
-  font-size: 12px;
-  padding: 20px;
+  font-style: normal;
+  font-size: 24px;
+  text-align: center;
+  padding: 1rem;
+  color: var(--text-color);
 }
 
 /* computer grid (react version) */
@@ -92,14 +82,20 @@ body {
   padding: 10px;
   text-align: center;
   backdrop-filter: blur(10px);
-
+  color: var(--text-color);
   background-color: transparent;
 }
 .computer-card:hover {
-  border: 2px solid #111;
+  border: 2px solid var(--accent-color);
+  /* background-color: rgba(0, 0, 0, 0.1); */
 }
 .computer-card-model {
   height: 250px;
+}
+
+.computer-card p {
+  color: var(--text-color);
+  font-size: 14px;
 }
 button {
   color: black;
@@ -125,7 +121,7 @@ button:hover {
   z-index: 10; /* sits on top of the grid */
 }
 .lightboxButton {
-  color: black;
+  color: var(--text-color);
   background-color: transparent;
   border: 0px;
   /* pin to the top-right corner of the card.
@@ -141,6 +137,23 @@ button:hover {
   height: 90vh;
   padding: 20px;
   position: relative;
+}
+/* mouseClicked(hi-fi || lo-fi)} — the words look like plain text,
+   not default grey buttons */
+.fidelity-toggle button {
+  font: inherit; /* buttons don't inherit the page font by default */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
+.fidelity-toggle button:hover {
+  text-decoration: underline;
+}
+.fidelity-toggle button.active {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 .lightbox-close {
   position: absolute;

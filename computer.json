@@ -1,56 +1,44 @@
 {
-  "high_fidelity_computer": [
+  "computers": [
     {
       "id": "1",
       "name": "Merlin",
-      "model": "/models/merlin/high.glb"
+      "link": "https://luvly.computer/home",
+      "year": "2026",
+      "lowModel": "/models/merlin/low.glb",
+      "highModel": "/models/merlin/high.glb"
     },
     {
       "id": "2",
       "name": "Anna",
-      "model": "/models/anna/high.glb"
+      "link": "https://example.com/anna",
+      "year": "2026",
+      "lowModel": "/models/anna/low.glb",
+      "highModel": "/models/anna/high.glb"
     },
     {
       "id": "3",
       "name": "Violet",
-      "model": "/models/violet/high.glb"
+      "link": "https://example.com/violet",
+      "year": "2026",
+      "lowModel": "/models/violet/low.glb",
+      "highModel": "/models/violet/high.glb"
     },
     {
       "id": "4",
       "name": "Lucy",
-      "model": "/models/lucy/high.glb"
+      "link": "https://example.com/lucy",
+      "year": "2026",
+      "lowModel": "/models/lucy/low.glb",
+      "highModel": "/models/lucy/high.glb"
     },
     {
       "id": "5",
       "name": "AC",
-      "model": "/models/ac/high.glb"
-    }
-  ],
-  "low_fidelity_computer": [
-    {
-      "id": "1",
-      "name": "Merlin",
-      "model": "/models/merlin/low.glb"
-    },
-    {
-      "id": "2",
-      "name": "Anna",
-      "model": "/models/anna/low.glb"
-    },
-    {
-      "id": "3",
-      "name": "Violet",
-      "model": "/models/violet/low.glb"
-    },
-    {
-      "id": "4",
-      "name": "Lucy",
-      "model": "/models/lucy/low.glb"
-    },
-    {
-      "id": "5",
-      "name": "AC",
-      "model": "/models/ac/low.glb"
+      "link": "https://example.com/ac",
+      "year": "2026",
+      "lowModel": "/models/ac/low.glb",
+      "highModel": "/models/ac/high.glb"
     }
   ]
 }

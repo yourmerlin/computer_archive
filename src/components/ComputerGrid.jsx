@@ -3,18 +3,8 @@ import ComputerCard from "./ComputerCard.jsx";
 import Lightbox from "./Lightbox.jsx";
 import { useState } from "react";
 
-// computer.json has two separate lists (low and high).
-// here we match them up by id so each computer has both models.
-
-const computers = computerData.low_fidelity_computer.map((low) => {
-  const high = computerData.high_fidelity_computer.find((h) => h.id === low.id);
-  return {
-    id: low.id,
-    name: low.name,
-    lowModel: low.model,
-    highModel: high.model,
-  };
-});
+// one entry per computer, each with both its low and high model paths.
+const computers = computerData.computers;
 
 export default function ComputerGrid() {
   const [selectedComputer, setSelectedComputer] = useState(null);
@@ -26,6 +16,7 @@ export default function ComputerGrid() {
         <ComputerCard
           key={computer.id}
           name={computer.name}
+          year={computer.year}
           lowModel={computer.lowModel}
           highModel={computer.highModel}
           onOpen={() => setSelectedComputer(computer)}
