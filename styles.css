@@ -55,14 +55,24 @@ nav pre {
 }
 
 footer {
-  font-family: "bitcount-grid-single-square", sans-serif;
+  font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 24px;
   text-align: center;
   padding: 1rem;
   color: var(--text-color);
+}
+
+footer h1 {
+  font-size: 24px;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+footer p {
+  text-align: center;
+  align-items: left;
+  font-size: 16px;
 }
 
 /* computer grid (react version) */
@@ -85,9 +95,13 @@ footer {
   color: var(--text-color);
   background-color: transparent;
 }
-.computer-card:hover {
-  border: 2px solid var(--accent-color);
-  /* background-color: rgba(0, 0, 0, 0.1); */
+/* only on devices with a real mouse. on phones a tap "sticks" the
+   hover style on, so the border would stay after you tap a card */
+@media (hover: hover) {
+  .computer-card:hover {
+    border: 2px solid var(--accent-color);
+    /* background-color: rgba(0, 0, 0, 0.1); */
+  }
 }
 .computer-card-model {
   height: 250px;
@@ -137,6 +151,16 @@ button:hover {
   height: 90vh;
   padding: 20px;
   position: relative;
+  /* stack the name, the toggle and the model top-to-bottom */
+  display: flex;
+  flex-direction: column;
+}
+/* the model fills the leftover space instead of being 100% of the box
+   (which pushed it past the bottom, under the name + toggle).
+   min-height: 0 lets it shrink — flex items refuse to by default */
+.lightbox-model {
+  flex: 1;
+  min-height: 0;
 }
 /* mouseClicked(hi-fi || lo-fi)} — the words look like plain text,
    not default grey buttons */
@@ -194,6 +218,14 @@ button:hover {
     width: 95vw;
     height: 85dvh;
     padding: 10px;
+  }
+  /* leave room on the right so a long name doesn't run under "close" */
+  .lightbox-content h2 {
+    padding-right: 60px;
+  }
+  /* bigger tap targets for fingers (about 40px tall) */
+  .fidelity-toggle button {
+    padding: 10px 6px;
   }
 }
 

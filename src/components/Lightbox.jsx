@@ -42,10 +42,13 @@ export default function Lightbox({ computer, onClose }) {
           </button>
           ){"}"}
         </p>
-        <ModelViewer
-          url={showHigh ? computer.highModel : computer.lowModel}
-          zoom
-        />
+        {/* the model takes whatever height is left under the text */}
+        <div className="lightbox-model">
+          <ModelViewer
+            url={showHigh ? computer.highModel : computer.lowModel}
+            zoom
+          />
+        </div>
       </div>
     </div>
   );
