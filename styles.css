@@ -30,8 +30,6 @@
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  /* when the browser stretches the canvas, keep square edges sharp
-     instead of blurring them (blurring is what made gray outlines) */
   image-rendering: pixelated;
 }
 html {

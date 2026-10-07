@@ -11,7 +11,7 @@ export function startDither(canvas) {
     return () => {};
   }
 
-  const PIXEL_SIZE = 15.0;
+  const PIXEL_SIZE = 10.0;
 
   const vsSource = `#version 300 es
       in vec2 a_position;
@@ -118,13 +118,15 @@ export function startDither(canvas) {
   const uTime = gl.getUniformLocation(prog, "uTime");
   const uColor = gl.getUniformLocation(prog, "uColor");
 
-  function colorForTheme(isLight) {
-    return isLight ? [1.0, 0.0, 0.467] : [1.0, 1.0, 1.0];
-  }
-  function setTheme(isLight) {
-    const [r, g, b] = colorForTheme(isLight);
-    gl.uniform3f(uColor, r, g, b);
-  }
+  // function colorForTheme(isLight) {
+  //   // colors are [red, green, blue] from 0 to 1. [0, 0, 0] = black.
+  //   // (white [1, 1, 1] is invisible on the white page!)
+  //   return isLight ? [1.0, 0.0, 0.467] : [0.0, 0.0, 0.0];
+  // }
+  // function setTheme(isLight) {
+  //   const [r, g, b] = colorForTheme(isLight);
+  //   gl.uniform3f(uColor, r, g, b);
+  // }
   setTheme(localStorage.getItem("theme") === "light");
   const onThemeChange = (e) => setTheme(e.detail.light);
   window.addEventListener("themechange", onThemeChange);
