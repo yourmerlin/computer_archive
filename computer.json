@@ -11,7 +11,7 @@
     {
       "id": "2",
       "name": "Anna",
-      "link": "https://example.com/anna",
+      "link": "",
       "year": "2026",
       "lowModel": "/models/anna/low.glb",
       "highModel": "/models/anna/high.glb"
@@ -19,7 +19,7 @@
     {
       "id": "3",
       "name": "Violet",
-      "link": "https://example.com/violet",
+      "link": "",
       "year": "2026",
       "lowModel": "/models/violet/low.glb",
       "highModel": "/models/violet/high.glb"
@@ -27,7 +27,7 @@
     {
       "id": "4",
       "name": "Lucy",
-      "link": "https://example.com/lucy",
+      "link": "",
       "year": "2026",
       "lowModel": "/models/lucy/low.glb",
       "highModel": "/models/lucy/high.glb"
@@ -35,7 +35,7 @@
     {
       "id": "5",
       "name": "AC",
-      "link": "https://example.com/ac",
+      "link": "",
       "year": "2026",
       "lowModel": "/models/ac/low.glb",
       "highModel": "/models/ac/high.glb"

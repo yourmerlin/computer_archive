@@ -17,6 +17,7 @@ export default function ComputerGrid() {
           key={computer.id}
           name={computer.name}
           year={computer.year}
+          link={computer.link}
           lowModel={computer.lowModel}
           highModel={computer.highModel}
           onOpen={() => setSelectedComputer(computer)}
