@@ -96,7 +96,7 @@ body {
   background-color: transparent;
 }
 .computer-card:hover {
-  border: 1px solid #111;
+  border: 2px solid #111;
 }
 .computer-card-model {
   height: 250px;
