@@ -1,6 +1,7 @@
 import computerData from "../../computer.json";
 import ComputerCard from "./ComputerCard.jsx";
 import Lightbox from "./Lightbox.jsx";
+import { SharedCanvas } from "./ModelViewer.jsx";
 import { useState } from "react";
 
 // one entry per computer, each with both its low and high model paths.
@@ -23,6 +24,9 @@ export default function ComputerGrid() {
           onOpen={() => setSelectedComputer(computer)}
         />
       ))}
+
+      {/* one 3D canvas that draws every card's model */}
+      <SharedCanvas />
 
       {selectedComputer && (
         <Lightbox

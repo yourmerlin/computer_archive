@@ -1,4 +1,4 @@
-import ModelViewer from "./ModelViewer.jsx";
+import { ModelView } from "./ModelViewer.jsx";
 
 // one card in the grid. name, lowModel and onOpen are "props":
 // values passed in from ComputerGrid, like attributes on an HTML tag.
@@ -7,7 +7,7 @@ export default function ComputerCard({ name, year, link, lowModel, onOpen }) {
   return (
     <article className="computer-card">
       <div className="computer-card-model">
-        <ModelViewer url={lowModel} />
+        <ModelView url={lowModel} />
       </div>
       <h2>
         {/* the link sits inside <pre> (inline inside a block) so the hover

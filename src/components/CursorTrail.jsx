@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 // settings: change these to tweak the look
 const PIXEL = 10; // size of each square, in px
 const LIFE = 700; // how long a square lasts before it's gone, in ms
-const COLOR = "#fff";
+const COLOR = "#4AF626";
 const MAX_PIXELS = 100; // safety cap so the list can never grow huge
 
 // a see-through canvas over the page. moving the mouse leaves a trail of

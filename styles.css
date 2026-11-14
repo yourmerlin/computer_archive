@@ -29,9 +29,9 @@
 /* color: START */
 
 :root {
-  --background-color: #0005d0;
-  --text-color: white;
-  --accent-color: white;
+  --background-color: black;
+  --text-color: #4AF626;
+  --accent-color: #4AF626;
 }
 
 /* color: END */
@@ -60,6 +60,52 @@ nav {
 }
 nav pre {
   font-size: 12px;
+}
+
+/* blinking terminal cursor (used in the nav title and the footer) */
+.cursor {
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+/* "loading_happiness(); 42%" under the title, while models load */
+.nav-status {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  min-height: 1.5em; /* reserve the space even when empty */
+  padding-top: 0.5rem;
+}
+.nav-status.is-hidden {
+  visibility: hidden;
+}
+
+/* the grid is hidden until the intro + models are done, then fades in */
+.home-main {
+  opacity: 0;
+  pointer-events: none; /* can't click invisible cards */
+  transition: opacity 0.8s ease;
+}
+.home-main.is-ready {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-main {
+    transition: none;
+  }
+}
+
+/* footer letters that haven't been typed yet: invisible but still take space */
+.untyped {
+  visibility: hidden;
 }
 
 footer {
@@ -116,6 +162,20 @@ footer p {
 .computer-card-model {
   height: 250px;
 }
+/* each card's "window" into the shared canvas fills the model area */
+.model-view {
+  width: 100%;
+  height: 100%;
+}
+/* the one canvas that draws every card's model. it covers the screen,
+   but clicks pass through it to the cards underneath */
+.shared-canvas {
+  position: fixed !important;
+  inset: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none;
+}
 
 /* the name links to that person's site. no blue / underline
    until you hover, so it matches the rest of the card */
@@ -131,7 +191,7 @@ footer p {
   font-size: 14px;
 }
 button {
-  color: black;
+  color: var(--text-color);
   background-color: transparent;
   border: 0px;
   padding: 10px 10px;
@@ -142,7 +202,7 @@ button {
 }
 button:hover {
   text-decoration: underline;
-  text-decoration-color: black;
+  text-decoration-color: var(--text-color);
 }
 .lightbox {
   position: fixed; /* stays put even if the page scrolls */
@@ -165,7 +225,8 @@ button:hover {
   z-index: 1; /* sit above the 3D model's canvas */
 }
 .lightbox-content {
-  background: #fff;
+  background: #1a1a1a; /* a lighter black, so it stands out from the page */
+  color: var(--text-color);
   width: 90vw;
   height: 90vh;
   padding: 20px;
@@ -194,9 +255,10 @@ button:hover {
 .fidelity-toggle button:hover {
   text-decoration: underline;
 }
+/* the selected mode is highlighted: green block, black text */
 .fidelity-toggle button.active {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 .lightbox-close {
   position: absolute;
