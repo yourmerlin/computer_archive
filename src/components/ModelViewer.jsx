@@ -1,6 +1,7 @@
 import { Suspense, useEffect, useMemo } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
+  useProgress,
   Bounds,
   Center,
   Environment,
@@ -51,18 +52,42 @@ export function ModelView({ url }) {
   );
 }
 
+// wipe the whole canvas at the start of every frame. without this, an old
+// drawing of a model (e.g. from before it was centered) could stay on screen
+// underneath the new one, so you'd see two computers.
+// priority 0 runs before the views draw (they use priority 1).
+function ClearEachFrame() {
+  useFrame((state) => state.gl.clear(true, true, true), 0);
+  return null;
+}
+
 // with frameloop="demand" the canvas only redraws when something changes.
-// scrolling moves the card "windows", so redraw when the page scrolls or resizes.
-function RedrawOnScroll() {
+// redraw when: the page scrolls/resizes (the card "windows" move),
+// the layout shifts (fonts, the grid appearing), or a model finishes loading.
+function RedrawWhenNeeded() {
   const invalidate = useThree((state) => state.invalidate);
+  const { loaded, active } = useProgress();
+
   useEffect(() => {
     window.addEventListener("scroll", invalidate, { passive: true });
     window.addEventListener("resize", invalidate);
+    const layout = new ResizeObserver(() => invalidate());
+    layout.observe(document.body);
     return () => {
       window.removeEventListener("scroll", invalidate);
       window.removeEventListener("resize", invalidate);
+      layout.disconnect();
     };
   }, [invalidate]);
+
+  // when loading changes, redraw now and again a moment later,
+  // after the models have been centered and the camera fitted
+  useEffect(() => {
+    invalidate();
+    const timer = setTimeout(() => invalidate(), 300);
+    return () => clearTimeout(timer);
+  }, [loaded, active, invalidate]);
+
   return null;
 }
 
@@ -75,7 +100,8 @@ export function SharedCanvas() {
       frameloop="demand"
       eventSource={document.getElementById("root")}
     >
-      <RedrawOnScroll />
+      <ClearEachFrame />
+      <RedrawWhenNeeded />
       <View.Port />
     </Canvas>
   );
